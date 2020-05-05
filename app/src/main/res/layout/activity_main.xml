@@ -62,25 +62,6 @@
         app:layout_constraintTop_toBottomOf="@+id/usernameEditText"
         app:layout_constraintLeft_toLeftOf="parent"/>
 
-    <TextView
-        android:id="@+id/dateview"
-        android:layout_width="@dimen/openBox"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/left_margin"
-        android:text="@string/Date_of_birth"
-        app:layout_constraintTop_toBottomOf="@+id/getBirthDate"
-        app:layout_constraintLeft_toLeftOf="parent"
-        />
-
-    <Button
-        android:id="@+id/getBirthDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/left_margin"
-        android:text="@string/pick_date"
-        app:layout_constraintTop_toBottomOf="@+id/emailEditText"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:onClick="showDatePickerDialog"/>
 
     <Button
         android:id="@+id/submitButton"
@@ -88,7 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/left_margin"
         android:text="@string/button_submit"
-        app:layout_constraintTop_toBottomOf="@+id/dateview"
+        app:layout_constraintTop_toBottomOf="@+id/emailEditText"
         app:layout_constraintLeft_toLeftOf="parent"
         android:onClick="getSecondActivity"/>
 
