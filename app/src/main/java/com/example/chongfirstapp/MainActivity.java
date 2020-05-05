@@ -20,61 +20,43 @@ import java.util.Calendar;
 
 import java.util.Date;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText getName;
     private EditText getEmail;
     private EditText getUserName;
-    private TextView birthdate;
-    private String birthDatestring;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button submit= findViewById(R.id.submitButton);
+        Button submit = findViewById(R.id.submitButton);
         submit.setOnClickListener(this);
-        Button getbirthdate = findViewById(R.id.getBirthDate);
-        getbirthdate.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                DialogFragment datePicker = new DatePickerFragment();
-                datePicker.show(getSupportFragmentManager(), "date picker");
-            }
-        });
 
-        getName= findViewById(R.id.nameEditText);
-        getEmail= findViewById(R.id.emailEditText);
-        getUserName= findViewById(R.id.usernameEditText);
-        birthdate = findViewById(R.id.dateview);
+        getName = findViewById(R.id.nameEditText);
+        getEmail = findViewById(R.id.emailEditText);
+        getUserName = findViewById(R.id.usernameEditText);
     }
 
 
-    public void getSecondActivity(View view)
-    {
-        Intent intent = new Intent(MainActivity.this,SecondActivity.class);
-            Bundle dataBundle = new Bundle();
-            dataBundle.putString(Constants.KEY_NAME, getName.getText().toString());
-            dataBundle.putString(Constants.KEY_EMAIL, getEmail.getText().toString());
-            dataBundle.putString(Constants.KEY_USERNAME, getUserName.getText().toString());
-            dataBundle.putString(Constants.KEY_BIRTH_DATE, birthDatestring);
-            intent.putExtras(dataBundle);
-            startActivity(intent);
-            onRestart();
+    public void getSecondActivity(View view) {
+        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+        Bundle dataBundle = new Bundle();
+        dataBundle.putString(Constants.KEY_NAME, getName.getText().toString());
+        dataBundle.putString(Constants.KEY_EMAIL, getEmail.getText().toString());
+        dataBundle.putString(Constants.KEY_USERNAME, getUserName.getText().toString());
+        intent.putExtras(dataBundle);
+        startActivity(intent);
+
     }
 
 
     @Override
     public void onClick(View v) {
-        if(v.getId() == R.id.submitButton &&  birthDatestring.compareTo(Constants.PROHIBIT_BEFORE_DATE) <= 0)
-        {
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                startActivity(intent);
-        }
-    }
+            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+            startActivity(intent);
 
-    @Override
-    protected void onRestart() {
-        super.onRestart();
     }
 }
+

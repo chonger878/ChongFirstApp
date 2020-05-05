@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SecondActivity extends AppCompatActivity implements View.OnClickListener {
+public class SecondActivity extends AppCompatActivity {
 
     private static final String TAG = SecondActivity.class.getSimpleName();
     private TextView textview;
@@ -30,10 +30,8 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         String email = "null";
         String date = "2020-04-28";
 
-        if(db != null)
-        {
-            if(db.containsKey(Constants.KEY_USERNAME))
-            {
+        if (db != null) {
+            if (db.containsKey(Constants.KEY_USERNAME)) {
                 username = db.getString(Constants.KEY_USERNAME);
             }
         }
@@ -42,15 +40,20 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         Log.i(TAG, new StringBuilder("Username: ").append(username).toString());
 
         textview.setText(thankyou);
-        Button goBackBtn=  findViewById(R.id.go_back_button);
-        goBackBtn.setOnClickListener(this);
+        Button goBackBtn = findViewById(R.id.go_back_button);
+        goBackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        if(savedInstanceState.containsKey(Constants.KEY_TEXT_VIEW)){
+        if (savedInstanceState.containsKey(Constants.KEY_TEXT_VIEW)) {
             textview.setText(savedInstanceState.getString(Constants.KEY_TEXT_VIEW));
         }
     }
@@ -62,14 +65,9 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
     }
 
 
-
-    @Override
-    public void onClick(View v) {
-        
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-    }
 }
+
+
+
+
+

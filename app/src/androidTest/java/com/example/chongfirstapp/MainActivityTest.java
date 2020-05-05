@@ -22,17 +22,10 @@ public class MainActivityTest {
         public ActivityScenarioRule<MainActivity>activityScenarioRule
                 = new ActivityScenarioRule<>(MainActivity.class);
 
-        public void loginWithWeirdName(){
-
-                        onView(withId(R.id.nameEditText)).perform(typeText("6&fghklk H4lkjlkjgti8"));
-                        onView(withId(R.id.emailEditText)).perform(typeText("coolname@gmail.com"));
-                        onView(withId(R.id.usernameEditText)).perform(typeText("WeirdNameGirl7"));
-                        onView(withId(R.id.getDatePicker)).perform(typeText("1998-02-01"));
-                        onView(withId(R.id.submitButton)).perform(click());
 
 
 
-        }
+
 
 
 
