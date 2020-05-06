@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/lilac"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/twenty_padding"
+        android:text="@string/welcome_msg"/>
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/twenty_marginStart"
+        android:layout_marginBottom="@dimen/twenty_marginBottom"
+        android:padding="@dimen/twenty_padding"
+        android:hint="@string/enter_name" />
+
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/twenty_padding"
+        android:layout_marginStart="@dimen/twenty_marginStart"
+        android:layout_marginBottom="@dimen/twenty_marginBottom"
+        android:hint="@string/enter_age" />
+
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/twenty_padding"
+        android:layout_marginStart="@dimen/twenty_marginStart"
+        android:layout_marginBottom="@dimen/twenty_marginBottom"
+        android:hint="@string/user_description"/>
+
+    <EditText
+        android:id="@+id/occupation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/twenty_padding"
+        android:layout_marginStart="@dimen/twenty_marginStart"
+        android:layout_marginBottom="@dimen/twenty_marginBottom"
+        android:hint="@string/enter_occupation" />
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/twenty_marginStart"
+        android:layout_marginBottom="@dimen/twenty_marginBottom"
+        android:padding="@dimen/twenty_padding"
+        android:text="@string/timeTomeet"
+        android:background="@color/magenta"
+        android:onClick="getSecondActivity"/>
+
+</LinearLayout>

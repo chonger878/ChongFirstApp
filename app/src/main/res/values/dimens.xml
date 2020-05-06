@@ -3,4 +3,7 @@
     <dimen name="left_margin">20dp</dimen>
     <dimen name="textWidth">10</dimen>
     <dimen name="openBox">0dp</dimen>
+    <dimen name="twenty_padding">20dp</dimen>
+    <dimen name="twenty_marginStart">20dp</dimen>
+    <dimen name="twenty_marginBottom">20dp</dimen>
 </resources>

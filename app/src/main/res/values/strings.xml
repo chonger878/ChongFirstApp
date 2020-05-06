@@ -8,5 +8,10 @@
     <string name="pick_date">Date of Birth</string>
     <string name="button_goBack">Enter Another User</string>
     <string name="Date_of_birth">Date of Birth</string>
+    <string name="enter_age">Enter your age</string>
+    <string name="user_description">Tell us a bit about yourself</string>
+    <string name="enter_occupation">What is your occupation?</string>
+    <string name="welcome_msg">Welcome to our Dating Site! Get ready to meet  the person you are destined to be with!</string>
+    <string name="timeTomeet">Time to Meet Destiny</string>
 
 </resources>
