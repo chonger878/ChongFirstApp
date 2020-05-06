@@ -4,6 +4,34 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/lilac"
     tools:context=".SecondActivity">
+
+    <ImageView
+         android:id="@+id/profilePic"
+        android:layout_height="@dimen/picHeight"
+        android:layout_width="wrap_content"
+        android:src="@drawable/mandoo"
+        />
+
+    <TextView
+        android:id="@+id/getName"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
+
+    <TextView
+        android:id="@+id/getAge"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
+
+    <TextView
+        android:id="@+id/getOccupation"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
+
+    <TextView
+        android:id="@+id/getDescription"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
 
 </LinearLayout>

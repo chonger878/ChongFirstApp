@@ -6,4 +6,5 @@
     <dimen name="twenty_padding">20dp</dimen>
     <dimen name="twenty_marginStart">20dp</dimen>
     <dimen name="twenty_marginBottom">20dp</dimen>
+    <dimen name="picHeight">200dp</dimen>
 </resources>

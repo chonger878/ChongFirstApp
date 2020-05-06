@@ -12,7 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="@dimen/twenty_padding"
-        android:text="@string/welcome_msg"/>
+        android:text="@string/welcome_msg"
+        android:textColor="@color/magenta"/>
 
     <EditText
         android:id="@+id/nameEditText"
@@ -21,7 +22,9 @@
         android:layout_marginStart="@dimen/twenty_marginStart"
         android:layout_marginBottom="@dimen/twenty_marginBottom"
         android:padding="@dimen/twenty_padding"
-        android:hint="@string/enter_name" />
+        android:hint="@string/enter_name"
+        android:textColor="@color/magenta"
+        android:inputType="text"/>
 
     <EditText
         android:id="@+id/age"
@@ -30,7 +33,9 @@
         android:padding="@dimen/twenty_padding"
         android:layout_marginStart="@dimen/twenty_marginStart"
         android:layout_marginBottom="@dimen/twenty_marginBottom"
-        android:hint="@string/enter_age" />
+        android:hint="@string/enter_age"
+        android:textColor="@color/magenta"
+        android:inputType="text"/>
 
     <EditText
         android:id="@+id/description"
@@ -39,7 +44,9 @@
         android:padding="@dimen/twenty_padding"
         android:layout_marginStart="@dimen/twenty_marginStart"
         android:layout_marginBottom="@dimen/twenty_marginBottom"
-        android:hint="@string/user_description"/>
+        android:hint="@string/user_description"
+        android:textColor="@color/magenta"
+        android:inputType="text"/>
 
     <EditText
         android:id="@+id/occupation"
@@ -48,7 +55,9 @@
         android:padding="@dimen/twenty_padding"
         android:layout_marginStart="@dimen/twenty_marginStart"
         android:layout_marginBottom="@dimen/twenty_marginBottom"
-        android:hint="@string/enter_occupation" />
+        android:hint="@string/enter_occupation"
+        android:textColor="@color/magenta"
+        android:inputType="text"/>
 
     <Button
         android:id="@+id/submitButton"
@@ -59,6 +68,7 @@
         android:padding="@dimen/twenty_padding"
         android:text="@string/timeTomeet"
         android:background="@color/magenta"
-        android:onClick="getSecondActivity"/>
+        android:onClick="getSecondActivity"
+        android:inputType="text"/>
 
 </LinearLayout>

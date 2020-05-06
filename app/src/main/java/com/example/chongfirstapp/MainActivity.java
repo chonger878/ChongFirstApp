@@ -23,20 +23,24 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText getName;
-    private EditText getEmail;
-    private EditText getUserName;
+    private EditText getAge;
+    private EditText getDescription;
+    private EditText getOccupation;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.buildprofilea3_main);
         Button submit = findViewById(R.id.submitButton);
         submit.setOnClickListener(this);
 
         getName = findViewById(R.id.nameEditText);
-        getEmail = findViewById(R.id.emailEditText);
-        getUserName = findViewById(R.id.usernameEditText);
+        getAge = findViewById(R.id.age);
+        getDescription= findViewById(R.id.description);
+        getOccupation= findViewById(R.id.occupation);
+
     }
 
 
@@ -44,8 +48,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent(MainActivity.this, SecondActivity.class);
         Bundle dataBundle = new Bundle();
         dataBundle.putString(Constants.KEY_NAME, getName.getText().toString());
-        dataBundle.putString(Constants.KEY_EMAIL, getEmail.getText().toString());
-        dataBundle.putString(Constants.KEY_USERNAME, getUserName.getText().toString());
+        dataBundle.putString(Constants.KEY_AGE, getAge.getText().toString());
+        dataBundle.putString(Constants.KEY_DESC, getDescription.getText().toString());
+        dataBundle.putString(Constants.KEY_OCCUPATION, getOccupation.getText().toString());
         intent.putExtras(dataBundle);
         startActivity(intent);
 
