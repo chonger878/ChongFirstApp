@@ -30,7 +30,7 @@ public class MainActivity<TabLayout> extends AppCompatActivity implements View.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        TabLayout tabLayout
 
         Button submit = findViewById(R.id.submitButton);
         submit.setOnClickListener(this);
