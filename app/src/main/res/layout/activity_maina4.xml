@@ -19,10 +19,13 @@
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-        <android.support.design.widget.TabLayout
+        <com.google.android.material.TabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content" >
+            <com.google.android.material.tabs.TabItem
+                android:text="@string/tab_text" />
+        </com.google.android.material.TabLayout>
 
     </android.support.design.widget.AppBarLayout>
 

@@ -405,7 +405,7 @@ jobs:
 
           name: Move Firebase coverage report
 
-          command: mkdir -p app/build/outputs/code-coverage/connected && cp firebase/${CIRCLE_SHA1}/Nexus6P-27-en_US-portrait/artifacts/coverage.ec app/build/outputs/code-coverage/connected/coverage.ec
+          command: mkdir -p app/build/outputs/code_coverage/debugAndroidTest/connected && cp firebase/${CIRCLE_SHA1}/Pixel2-29-en_US-portrait/artifacts/coverage.ec app/build/outputs/code_coverage/debugAndroidTest/connected/coverage.ec
 
       - *export_gservices_key
 
