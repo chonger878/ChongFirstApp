@@ -13,5 +13,7 @@
     <string name="enter_occupation">What is your occupation?</string>
     <string name="welcome_msg">Welcome to our Dating Site! Get ready to meet  the person you are destined to be with!</string>
     <string name="timeTomeet">Time to Meet Destiny</string>
+    <string name="matches_placeholder_text">This is where Matches will go</string>
+    <string name="settings_placeholder_text">This is where the settings will be</string>
 
 </resources>

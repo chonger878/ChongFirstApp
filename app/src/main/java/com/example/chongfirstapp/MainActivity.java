@@ -1,26 +1,23 @@
 package com.example.chongfirstapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import android.app.DatePickerDialog;
-import androidx.fragment.app.DialogFragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.provider.SyncStateContract;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.TextView;
 
-import java.text.DateFormat;
-import java.util.Calendar;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity<TabLayout> extends AppCompatActivity implements View.OnClickListener {
 
     private EditText getName;
     private EditText getAge;
@@ -32,7 +29,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.buildprofilea3_main);
+        setContentView(R.layout.activity_main);
+
+
         Button submit = findViewById(R.id.submitButton);
         submit.setOnClickListener(this);
 
@@ -41,6 +40,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getDescription= findViewById(R.id.description);
         getOccupation= findViewById(R.id.occupation);
 
+    }
+
+    private void setupViewPager(ViewPager viewPager)
+    {
+        Adapter adapter = new Adapter(getSupportFragmentManager());
+            adapter.addFragment(new ProfileFragment(), "Profile");
+            adapter.addFragment(new SettingsFragment(), "Settings");
+            adapter.addFragment(new MatchesFragment(), "Matches");
+            viewPager.setAdapter(adapter);
+    }
+
+    static class Adapter extends FragmentPagerAdapter{
+        public final List<Fragment> mFragmentList= new ArrayList<>();
+        public final List<String> mFragmentTitleList = new ArrayList<>();
+
+        public Adapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @NonNull
+        @Override
+        public Fragment getItem(int position) {
+            return null;
+        }
+
+        @Override
+        public int getCount() {
+            return 0;
+        }
+
+        public void addFragment(Fragment fragment, String title)
+        {
+            mFragmentList.add(fragment);
+            mFragmentTitleList.add(title);
+        }
     }
 
 
