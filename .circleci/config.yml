@@ -365,7 +365,7 @@ jobs:
 
           name: Download instrumented test results from Firebase Test Lab
 
-          command: gsutil -m cp -r -U gs://chongfirstapp/${CIRCLE_SHA1} /root/workspace/firebase/
+          command: gsutil -m cp -r -U gs://test-lab-tb64rr1cay1ri-n65s4pmad6fwz/${CIRCLE_SHA1} /root/workspace/firebase/
 
       - *persist_firebase_workspace
 
