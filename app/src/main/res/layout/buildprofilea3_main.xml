@@ -6,6 +6,23 @@
     android:orientation="vertical"
     android:background="@color/lilac"
     tools:context=".MainActivity">
+    
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Light">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
 
     <TextView
         android:id="@+id/welcome"
@@ -68,7 +85,13 @@
         android:padding="@dimen/twenty_padding"
         android:text="@string/timeTomeet"
         android:background="@color/magenta"
-        android:onClick="getSecondActivity"
-        android:inputType="text"/>
+        android:onClick="getSecondActivity" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible" />
 
 </LinearLayout>
