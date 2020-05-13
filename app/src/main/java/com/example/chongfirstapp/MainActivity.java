@@ -29,7 +29,7 @@ public class MainActivity<TabLayout> extends AppCompatActivity implements View.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.buildprofilea3_main);
 
 
         Button submit = findViewById(R.id.submitButton);
@@ -42,40 +42,7 @@ public class MainActivity<TabLayout> extends AppCompatActivity implements View.O
 
     }
 
-    private void setupViewPager(ViewPager viewPager)
-    {
-        Adapter adapter = new Adapter(getSupportFragmentManager());
-            adapter.addFragment(new ProfileFragment(), "Profile");
-            adapter.addFragment(new SettingsFragment(), "Settings");
-            adapter.addFragment(new MatchesFragment(), "Matches");
-            viewPager.setAdapter(adapter);
-    }
 
-    static class Adapter extends FragmentPagerAdapter{
-        public final List<Fragment> mFragmentList= new ArrayList<>();
-        public final List<String> mFragmentTitleList = new ArrayList<>();
-
-        public Adapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @NonNull
-        @Override
-        public Fragment getItem(int position) {
-            return null;
-        }
-
-        @Override
-        public int getCount() {
-            return 0;
-        }
-
-        public void addFragment(Fragment fragment, String title)
-        {
-            mFragmentList.add(fragment);
-            mFragmentTitleList.add(title);
-        }
-    }
 
 
     public void getSecondActivity(View view) {

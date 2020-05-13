@@ -15,23 +15,10 @@
         />
 
     <TextView
-        android:id="@+id/getName"
+        android:id="@+id/placeholdertext"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
-
-    <TextView
-        android:id="@+id/getAge"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
-
-    <TextView
-        android:id="@+id/getOccupation"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
-
-    <TextView
-        android:id="@+id/getDescription"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
+        android:layout_width="wrap_content"
+        android:text="@string/placeholder_text"
+        />
 
 </LinearLayout>
