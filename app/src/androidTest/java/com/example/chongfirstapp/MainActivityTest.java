@@ -4,6 +4,7 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import org.junit.Rule;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static androidx.test.espresso.Espresso.onView;
@@ -18,6 +19,7 @@ public class MainActivityTest {
         public ActivityScenarioRule<MainActivity>activityScenarioRule
                 = new ActivityScenarioRule<>(MainActivity.class);
 
+        @Test
         public void hasTextOnScreen(){
                 onView(withId(R.id.welcome))
                         .check((matches(withText(R.string.welcome_msg))));
