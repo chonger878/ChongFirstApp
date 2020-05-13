@@ -1,0 +1,2 @@
+[![CircleCI](https://circleci.com/gh/chonger878/ChongFirstApp.svg?style=svg)](https://circleci.com/gh/chonger878/ChongFirstApp)
+[![codecov](https://codecov.io/gh/chonger878/ChongFirstApp/branch/master/graph/badge.svg)](https://codecov.io/gh/chonger878/ChongFirstApp)
