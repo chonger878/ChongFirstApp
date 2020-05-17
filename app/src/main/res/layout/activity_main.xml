@@ -4,73 +4,78 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/dogPic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/twenty_marginStart"
+        android:layout_marginBottom="@dimen/twenty_marginBottom"
         android:src="@mipmap/doc_pic"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         />
 
     <TextView
         android:id="@+id/header_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/left_margin"
+        android:layout_marginStart="@dimen/twenty_marginStart"
+        android:layout_marginBottom="@dimen/twenty_marginBottom"
         android:text="@string/chong_id_label"
-        app:layout_constraintTop_toBottomOf="@+id/dogPic"
-        app:layout_constraintLeft_toLeftOf="parent"
          />
-
-
-
 
     <EditText
         android:id="@+id/nameEditText"
-        android:layout_width="@dimen/openBox"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/left_margin"
-        android:ems="@dimen/textWidth"
+        android:layout_marginStart="@dimen/twenty_marginStart"
+        android:layout_marginBottom="@dimen/twenty_marginBottom"
         android:hint="@string/enter_name"
-        android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="@+id/header_text"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/usernameEditText"
-        android:layout_width="@dimen/openBox"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/left_margin"
+        android:layout_marginStart="@dimen/twenty_marginStart"
+        android:layout_marginBottom="@dimen/twenty_marginBottom"
         android:hint="@string/enter_username"
-        android:inputType="text"
-        android:ems="@dimen/textWidth"
-        app:layout_constraintTop_toBottomOf="@+id/nameEditText"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/emailEditText"
-        android:layout_width="@dimen/openBox"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/left_margin"
+        android:layout_marginStart="@dimen/twenty_marginStart"
+        android:layout_marginBottom="@dimen/twenty_marginBottom"
         android:hint="@string/enter_email"
-        android:inputType="textEmailAddress"
-        android:ems="@dimen/textWidth"
-        app:layout_constraintTop_toBottomOf="@+id/usernameEditText"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        android:inputType="text" />
+
+    <EditText
+            android:id="@+id/getDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/twenty_marginStart"
+            android:layout_marginBottom="@dimen/twenty_marginBottom"/>
+
+    <Button
+        android:id="@+id/pickbirthdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/twenty_marginStart"
+        android:layout_marginBottom="@dimen/twenty_marginBottom"
+        android:text="@string/Date_of_birth"
+        />
 
 
     <Button
         android:id="@+id/submitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/left_margin"
+        android:layout_marginStart="@dimen/twenty_marginStart"
+        android:layout_marginBottom="@dimen/twenty_marginBottom"
         android:text="@string/button_submit"
-        app:layout_constraintTop_toBottomOf="@+id/emailEditText"
-        app:layout_constraintLeft_toLeftOf="parent"
         android:onClick="getSecondActivity"/>
 
 

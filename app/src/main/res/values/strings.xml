@@ -16,5 +16,6 @@
     <string name="matches_placeholder_text">This is where Matches will go</string>
     <string name="settings_placeholder_text">This is where the settings will be</string>
     <string name="placeholder_text">Thank you for signing up for our app!</string>
+    <string name="thanks">Thanks for signing up!</string>
 
 </resources>

@@ -1,29 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".SecondActivity">
 
     <TextView
         android:id="@+id/thanks_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/left_margin"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        android:layout_marginStart="@dimen/twenty_marginStart"
+        android:layout_marginBottom="@dimen/twenty_marginBottom"
+        />
 
     <Button
         android:id="@+id/go_back_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft= "@dimen/left_margin"
-        android:text ="@string/button_goBack"
-        app:layout_constraintTop_toBottomOf="@+id/thanks_msg"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        android:layout_marginStart="@dimen/twenty_marginStart"
+        android:layout_marginBottom="@dimen/twenty_marginBottom"
+        android:text ="@string/button_goBack" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
