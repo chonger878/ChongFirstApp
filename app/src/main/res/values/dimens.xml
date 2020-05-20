@@ -7,4 +7,11 @@
     <dimen name="twenty_marginStart">20dp</dimen>
     <dimen name="twenty_marginBottom">20dp</dimen>
     <dimen name="picHeight">200dp</dimen>
+    <dimen name="picWidth">200dp</dimen>
+    <dimen name="like_button_ht">24dp</dimen>
+    <dimen name="like_button_wid">24dp</dimen>
+    <dimen name="cardview_height">300dp</dimen>
+    <dimen name="cardview_width">250dp</dimen>
+    <dimen name="cardview_pic_height">100dp</dimen>
+    <dimen name="five_padding">5dp</dimen>
 </resources>

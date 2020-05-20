@@ -1,16 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView"
+    android:layout_width="@dimen/cardview_width"
+    android:layout_height="@dimen/cardview_height"
+    android:layout_gravity="center"
+    android:layout_marginStart="@dimen/twenty_marginStart"
+    android:layout_marginBottom="@dimen/twenty_marginBottom">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/profilePic"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cardview_pic_height"
+        android:padding="@dimen/five_padding"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/mandoo" />
+
+        <TextView
+            android:id="@+id/matchName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profilePic"
+            android:text="@string/nameOfMatch"
+            android:padding="@dimen/twenty_padding"/>
 
     <TextView
-        android:id="@+id/matchestabtext"
-        android:layout_width="wrap_content"
+        android:id="@+id/info_here"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/twenty_marginStart"
-        android:layout_marginBottom="@dimen/twenty_marginBottom"
-        android:text="@string/matches_placeholder_text"/>
+        android:layout_below="@+id/matchName"
+        android:text="@string/cute_puppy"
+        android:padding="@dimen/twenty_padding"/>
+    
+    <ImageButton
+        android:id="@+id/like_button"
+        android:layout_width="@dimen/like_button_ht"
+        android:layout_height="@dimen/like_button_ht"
+        android:padding="@dimen/twenty_padding"
+        app:srcCompat="@drawable/ic_favorite"
+        android:layout_below="@id/info_here"/>
 
-</LinearLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
