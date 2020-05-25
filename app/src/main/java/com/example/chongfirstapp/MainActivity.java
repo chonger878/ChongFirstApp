@@ -1,136 +1,82 @@
 package com.example.chongfirstapp;
 
 
-import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
+import androidx.fragment.app.DialogFragment;
 
-import com.google.android.material.tabs.TabLayout;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
-
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
     private EditText Name;
     private EditText UserName;
     private EditText Email;
-    private EditText txtDate;
-    private int byear,bmonth, bday;
+    private TextView birthDate;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        Toolbar toolbar =  findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        ViewPager viewPager = findViewById(R.id.viewpager);
-        setupViewPager(viewPager);
-        TabLayout tabs =  findViewById(R.id.tabs);
-        tabs.addTab(tabs.newTab().setText("Profile"));
-        tabs.addTab(tabs.newTab().setText("Matches"));
-        tabs.addTab(tabs.newTab().setText("Settings"));
-        tabs.setupWithViewPager(viewPager);
 
         Name = findViewById(R.id.nameEditText);
         UserName = findViewById(R.id.usernameEditText);
-        Email= findViewById(R.id.emailEditText);
-        txtDate = findViewById(R.id.getDate);
-        final Button getDate = findViewById(R.id.pickbirthdate);
-        getDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final Calendar dob = Calendar.getInstance();
-                byear = dob.get(Calendar.YEAR);
-                bmonth =  dob.get(Calendar.MONTH);
-                bday = dob.get(Calendar.DAY_OF_MONTH);
-
-                DatePickerDialog getDateDialog = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                            txtDate.setText(year + "-" + month+1 + "-" +dayOfMonth);
-                    }
-                }, byear, bmonth,bday);
-                getDateDialog.show();
-            }
-        });
+        Email = findViewById(R.id.emailEditText);
+        birthDate = findViewById(R.id.getDate);
         Button submit = findViewById(R.id.submitButton);
-        submit.setOnClickListener(this);
-
-
+        submit.setOnClickListener((View.OnClickListener) this);
     }
 
-    private void setupViewPager(ViewPager viewPager)
-    {
-        Adapter adapter = new Adapter(getSupportFragmentManager());
-        adapter.addFragment(new ProfileFragment(),"Profile");
-        adapter.addFragment(new MatchesFragment(),"Matches");
-        adapter.addFragment(new SettingsFragment(),"Settings");
-        viewPager.setAdapter(adapter);
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        if(savedInstanceState.containsKey(Constants.KEY_BIRTH_DATE)){
+            birthDate.setText((String)savedInstanceState.get(Constants.KEY_BIRTH_DATE));
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(Constants.KEY_BIRTH_DATE, birthDate.getText().toString());
     }
 
 
-
-    static class Adapter extends FragmentPagerAdapter {
-        private final List<Fragment> mFragmentList = new ArrayList<>();
-        private final List<String> mFragmentTitleList = new ArrayList<>();
-
-
-        public Adapter(FragmentManager manager)
-        {
-            super(manager, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-
-        }
-        @Override
-        public Fragment getItem(int position){
-            return mFragmentList.get(position);
-        }
-
-        @Override
-        public int getCount(){
-            return mFragmentList.size();
-        }
-
-        public void addFragment(Fragment fragment, String tabName){
-            mFragmentList.add(fragment);
-            mFragmentTitleList.add(tabName);
-        }
-        @Override
-        public CharSequence getPageTitle(int position){
-            return mFragmentTitleList.get(position);
-        }
+    public void showBirthDateDialog(View v){
+        DialogFragment newFragment = new DateDialog(birthDate);
+        newFragment.show(getSupportFragmentManager(), "datePicker");
     }
-    
 
-    public void getSecondActivity(View view) {
+
+    public void getSecondActivity(View view) throws ParseException {
         Intent intent = new Intent(MainActivity.this, SecondActivity.class);
         Bundle dataBundle = new Bundle();
         dataBundle.putString(Constants.KEY_NAME, Name.getText().toString());
         dataBundle.putString(Constants.KEY_USERNAME, UserName.getText().toString());
         dataBundle.putString(Constants.KEY_EMAIL, Email.getText().toString());
+        dataBundle.putString(Constants.KEY_BIRTH_DATE, birthDate.getText().toString());
         intent.putExtras(dataBundle);
-        startActivity(intent);
+        SimpleDateFormat Formatter;
+        Formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
+        Date getBirthDate = Formatter.parse(birthDate.toString());
+        Date compareDate = Formatter.parse(Constants.PROHIBIT_BEFORE_DATE);
 
-    }
-
-    public void onClick(View v) {
-        String getDate = txtDate.getText().toString();
-        if(getDate.compareTo(Constants.PROHIBIT_BEFORE_DATE) < 0) {
-            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+        if ( (getBirthDate != null) && (getBirthDate.before(compareDate))) {
             startActivity(intent);
         }
     }
-
 }
+
+
 
