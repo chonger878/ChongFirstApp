@@ -36,6 +36,6 @@ public class DateDialog extends DialogFragment implements DatePickerDialog.OnDat
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth)
     {
         birthDate.setText((new StringBuilder().append(year).append("-").
-                append(month).append("-").append(dayOfMonth)));
+                append(month+1).append("-").append(dayOfMonth)));
     }
 }

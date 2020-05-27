@@ -57,12 +57,13 @@
         android:hint="@string/enter_email"
         android:inputType="text" />
 
-    <TextView
+    <EditText
             android:id="@+id/getDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/twenty_marginStart"
-            android:layout_marginBottom="@dimen/twenty_marginBottom" />
+            android:layout_marginBottom="@dimen/twenty_marginBottom"
+            android:inputType="text"/>
 
     <Button
         android:id="@+id/pickbirthdate"
