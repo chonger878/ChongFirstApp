@@ -15,4 +15,6 @@ public class Constants {
     public static final String KEY_TEST_OCCUPATION = "Queen of Sassiness";
     public static final String KEY_TEST_DESCRIPTION= "Age is just a number. You can't say no to this"
             + "face, right?";
+    public static final int NUMBER_OF_THREADS=5;
+
 }

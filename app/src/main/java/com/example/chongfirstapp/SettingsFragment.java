@@ -9,16 +9,19 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class SettingsFragment extends Fragment {
+
+    private SettingListAdapter sDB;
+    private SettingsViewModel sViewModel;
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
         RecyclerView recyclerView = (RecyclerView) inflater.inflate(R.layout.recycler_view,
                 container, false);
 
-        SettingsFragment.ContentAdapter adapter = new SettingsFragment.ContentAdapter();
-        recyclerView.setAdapter(adapter);
-        recyclerView.setHasFixedSize(true);
-
         return recyclerView;
+    }
+    public void onViewCreated(View view, Bundle savedInstanceState){
+
     }
     public static class ViewHolder extends RecyclerView.ViewHolder{
         public ViewHolder(LayoutInflater inflater, ViewGroup parent){

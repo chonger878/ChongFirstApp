@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:content=".SettingsFragment">
 
-    <TextView
-        android:id="@+id/settingstabtext"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/recyclerview_item"
+        android:padding="@dimen/twenty_padding"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/twenty_marginStart"
-        android:layout_marginBottom="@dimen/twenty_marginBottom"
-        android:text="@string/settings_placeholder_text"/>
+        android:layout_width="wrap_content"/>
 
 </LinearLayout>
