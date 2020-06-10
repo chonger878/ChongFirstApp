@@ -12,13 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/profilePic"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/cardview_pic_height"
-        android:padding="@dimen/five_padding"
-        android:scaleType="centerCrop"
-        tools:src="@drawable/mandoo" />
+        <ImageView
+            android:id="@+id/profilePic"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cardview_pic_height"
+            android:padding="@dimen/five_padding"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/mandoo" />
 
         <TextView
             android:id="@+id/matchName"
@@ -28,21 +28,21 @@
             android:text="@string/nameOfMatch"
             android:padding="@dimen/twenty_padding"/>
 
-    <TextView
-        android:id="@+id/info_here"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/matchName"
-        android:text="@string/cute_puppy"
-        android:padding="@dimen/twenty_padding"/>
-    
-    <ImageButton
-        android:id="@+id/like_button"
-        android:layout_width="@dimen/like_button_ht"
-        android:layout_height="@dimen/like_button_ht"
-        android:padding="@dimen/twenty_padding"
-        app:srcCompat="@drawable/ic_favorite"
-        android:layout_below="@id/info_here"/>
+        <TextView
+            android:id="@+id/info_here"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/matchName"
+            android:text="@string/cute_puppy"
+            android:padding="@dimen/twenty_padding"/>
+
+        <ImageButton
+            android:id="@+id/like_button"
+            android:layout_width="@dimen/like_button_ht"
+            android:layout_height="@dimen/like_button_ht"
+            android:padding="@dimen/twenty_padding"
+            app:srcCompat="@drawable/ic_favorite"
+            android:layout_below="@id/info_here"/>
 
     </RelativeLayout>
 

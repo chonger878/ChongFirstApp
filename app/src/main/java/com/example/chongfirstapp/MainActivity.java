@@ -5,16 +5,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-
+import androidx.fragment.app.Fragment;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText setName;
+    private EditText Name;
     private EditText setAge;
     private EditText setOccupation;
-    private EditText setDescription;
+    private TextView setDescription;
 
 
 
@@ -23,24 +23,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.buildprofilea3_main);
 
-
-        setName = findViewById(R.id.nameEditText);
+        Name = findViewById(R.id.nameEditText);
         setAge = findViewById(R.id.ageInput);
-        setOccupation = findViewById(R.id.occupationInput);
+        setOccupation= findViewById(R.id.occupationInput);
         setDescription = findViewById(R.id.descriptionInput);
 
     }
 
-
-
-    public void getSecondActivity(View view){
+    public void getSecondActivity(View view) {
         Intent intent = new Intent(MainActivity.this, SecondActivity.class);
         Bundle dataBundle = new Bundle();
-        dataBundle.putString(Constants.KEY_NAME, setName.getText().toString());
+        Fragment ProfileFragment = new ProfileFragment();
+        dataBundle.putString(Constants.KEY_NAME, Name.getText().toString());
         dataBundle.putString(Constants.KEY_AGE, setAge.getText().toString());
         dataBundle.putString(Constants.KEY_OCCUPATION, setOccupation.getText().toString());
         dataBundle.putString(Constants.KEY_DESC, setDescription.getText().toString());
-        intent.putExtras(dataBundle);
         startActivity(intent);
 
     }

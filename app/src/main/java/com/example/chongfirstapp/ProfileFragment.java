@@ -4,53 +4,43 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 
 public class ProfileFragment extends Fragment {
+
+    private TextView getName;
+    private TextView getAge;
+    private TextView getOccupation;
+    private TextView getDescription;
+    private Bundle bundle;
+
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
-        RecyclerView recyclerView = (RecyclerView) inflater.inflate(R.layout.recycler_view,
-                container, false);
+        View getProfile =  inflater.inflate(R.layout.profiles_view,
+                null);
+        getName = getProfile.findViewById(R.id.name);
+        getAge = getProfile.findViewById(R.id.age);
+        getOccupation = getProfile.findViewById(R.id.occupation);
+        getDescription = getProfile.findViewById(R.id.description);
 
-        ProfileFragment.ContentAdapter adapter = new ProfileFragment.ContentAdapter();
-        recyclerView.setAdapter(adapter);
-        recyclerView.setHasFixedSize(true);
+        String name = getArguments().getString(Constants.KEY_NAME);
+        String age = getArguments().getString(Constants.KEY_AGE);
+        String occupation = getArguments().getString(Constants.KEY_OCCUPATION);
+        String description = getArguments().getString(Constants.KEY_DESC);
+
+        getName.setText(name);
+        getAge.setText(age);
+        getOccupation.setText(occupation);
+        getDescription.setText(description);
+
+        return getProfile;
 
 
 
-        return recyclerView;
+
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
-        public ViewHolder(LayoutInflater inflater, ViewGroup parent){
-            super(inflater.inflate(R.layout.profiles_view,parent,false));
-        }
-    }
-
-    public static class ContentAdapter extends RecyclerView.Adapter<ProfileFragment.ViewHolder>{
-
-        private static int LENGTH = 18;
-
-        public ContentAdapter(){
-
-        }
-
-        @Override
-        public ProfileFragment.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
-        {
-            return new ProfileFragment.ViewHolder(LayoutInflater.from(parent.getContext()), parent);
-        }
-
-        @Override
-        public void onBindViewHolder(ProfileFragment.ViewHolder holder, int position)
-        {
-
-        }
-
-        public int getItemCount(){
-            return LENGTH;
-        }
-    }
 }

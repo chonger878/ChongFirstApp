@@ -5,33 +5,44 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <ImageView
+        android:id="@+id/profilePic"
+        android:layout_height="@dimen/picHeight"
+        android:layout_width="wrap_content"
+        android:src="@drawable/mandoo"
+        />
+
     <TextView
-        android:id="@+id/Name"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-    />
+        android:padding="@dimen/twenty_padding"
+        android:layout_marginStart="@dimen/twenty_marginStart"
+        android:layout_marginBottom="@dimen/twenty_marginBottom"/>
 
     <TextView
         android:id="@+id/age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        />
+        android:padding="@dimen/twenty_padding"
+        android:layout_marginStart="@dimen/twenty_marginStart"
+        android:layout_marginBottom="@dimen/twenty_marginBottom"/>
 
     <TextView
         android:id="@+id/occupation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        />
+        android:padding="@dimen/twenty_padding"
+        android:layout_marginStart="@dimen/twenty_marginStart"
+        android:layout_marginBottom="@dimen/twenty_marginBottom"/>
 
     <TextView
-        android:id="@+id/decription"
+        android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        />
+        android:padding="@dimen/twenty_padding"
+        android:layout_marginStart="@dimen/twenty_marginStart"
+        android:layout_marginBottom="@dimen/twenty_marginBottom"/>
 
 
 </LinearLayout>
