@@ -51,13 +51,10 @@ public class SecondActivity extends AppCompatActivity{
             getDescription.setText(db.getString(Constants.KEY_DESC));
         }
 
-        ProfileFragment showProfile = new ProfileFragment();
-        showProfile.setArguments(db);
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ViewPager viewPager = findViewById(R.id.viewpager);
-        setupViewPager(viewPager);
+        setupViewPager(viewPager,db);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.addTab(tabs.newTab().setText("Profile"));
         tabs.addTab(tabs.newTab().setText("Matches"));
@@ -66,10 +63,10 @@ public class SecondActivity extends AppCompatActivity{
 
     }
 
-    private void setupViewPager(ViewPager viewPager)
+    private void setupViewPager(ViewPager viewPager, Bundle bundle)
     {
         SecondActivity.Adapter adapter = new SecondActivity.Adapter(getSupportFragmentManager());
-        adapter.addFragment(new ProfileFragment(),"Profile");
+        adapter.addFragment(new ProfileFragment(bundle),"Profile");
         adapter.addFragment(new MatchesFragment(),"Matches");
         adapter.addFragment(new SettingsFragment(),"Settings");
         viewPager.setAdapter(adapter);
