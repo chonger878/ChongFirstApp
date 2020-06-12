@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="matches" >
+        <item>Mandoo</item>
+        <item>Little Miss Bun Bun</item>
+        <item>Baby Princess</item>
+        <item>Princess Mandoo</item>
+        <item>Cutesy Dumpling</item>
+    </string-array>
+    <string-array name="matchDesc">
+        <item>I dare you to say no to this face! I can be quite playful</item>
+        <item>Sassy puppy here. I have attitude. Deal with it!</item>
+        <item>I am the real boss in the household. No one questions my rules EVER!</item>
+        <item>I am royalty.  Never forget that!</item>
+        <item>I am can be cute as a dumpling.  You cannot be mad at me!</item>
+    </string-array>
+    <string-array name="matches_pic">
+        <item>@drawable/mandoo</item>
+        <item>@drawable/mandoo2</item>
+        <item>@drawable/mandoo3</item>
+        <item>@drawable/mandoo4</item>
+        <item>@drawable/mandoo5</item>
+    </string-array>
+</resources>

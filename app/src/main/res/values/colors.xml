@@ -6,4 +6,6 @@
     <color name="magenta">#c7006e</color>
     <color name ="lilac">#e98df5</color>
     <color name="buttonLabel">#FFFFFF</color>
+    <color name ="DarkGray">#A9A9A9</color>
+    <color name ="Black">#000000</color>
 </resources>

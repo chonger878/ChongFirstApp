@@ -9,6 +9,5 @@
     android:paddingBottom="@dimen/twenty_padding"
     android:paddingTop="@dimen/twenty_padding"
     android:scrollbars="vertical"
-    >
+    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-</androidx.recyclerview.widget.RecyclerView>

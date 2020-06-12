@@ -1,23 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cardView"
-    android:layout_width="@dimen/cardview_width"
-    android:layout_height="@dimen/cardview_height"
-    android:layout_gravity="center"
-    android:layout_marginStart="@dimen/twenty_marginStart"
-    android:layout_marginBottom="@dimen/twenty_marginBottom">
+    tools:context=".MatchesFragment">
 
-
-        <TextView
-            android:id="@+id/placeholder"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/profilePic"
-            android:text="@string/matches_placeholder_text"
-            android:padding="@dimen/twenty_padding"/>
-
-
-
-</LinearLayout>
+</androidx.cardview.widget.CardView>
