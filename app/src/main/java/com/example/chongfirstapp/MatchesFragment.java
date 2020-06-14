@@ -12,10 +12,13 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.squareup.picasso.Picasso;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 public class MatchesFragment extends Fragment {
 
@@ -57,14 +60,28 @@ public class MatchesFragment extends Fragment {
 
     public class ContentAdapter extends RecyclerView.Adapter<ViewHolder>{
 
-        private static final int LENGTH = 5;
-        private final String[] mMatches;
+        private static final int LENGTH = 6;
+        private  String[] name;
+        private String[] image;
         private final String[] mDesc;
         private final Drawable[] mPics;
+        private FirebaseMatchViewModel matchVM;
+        ArrayList<MatchItem> matchItems = new ArrayList<>();
 
         public ContentAdapter(Context context){
+            matchVM = new FirebaseMatchViewModel();
+            matchVM.getMatches((match) -> {
+                matchItems = match;
+                name = new String[matchItems.size()];
+                image = new String[matchItems.size()];
+                for(int i = 0; i < matchItems.size(); i++){
+                    name[i] = matchItems.get(i).getMatchesName();
+                    image[i] = matchItems.get(i).getImageUrl();
+                }
+                notifyDataSetChanged();
+            });
             Resources resources = context.getResources();
-            mMatches = resources.getStringArray(R.array.matches);
+            //mMatches = resources.getStringArray(R.array.matches);
             mDesc = resources.getStringArray(R.array.matchDesc);
             TypedArray picProfile = resources.obtainTypedArray(R.array.matches_pic);
             mPics = new Drawable[picProfile.length()];
@@ -72,6 +89,8 @@ public class MatchesFragment extends Fragment {
                 mPics[i] = picProfile.getDrawable(i);
             }
             picProfile.recycle();
+
+
 
         }
         @Override
@@ -83,13 +102,13 @@ public class MatchesFragment extends Fragment {
         @Override
         public void onBindViewHolder(ViewHolder holder, int position)
         {
-            holder.profilePic.setImageDrawable(mPics[position % mPics.length]);
-            holder.profileName.setText(mMatches[position % mMatches.length]);
-            holder.profileInfo.setText(mDesc[position % mDesc.length]);
+            Picasso.get().load(image[position % image.length]).into(holder.profilePic);
+            holder.profileName.setText(name[position % name.length]);
+            //holder.profileInfo.setText(mDesc[position % mDesc.length]);
         }
 
         public int getItemCount(){
-            return LENGTH;
+            return matchItems.size();
         }
 
 
