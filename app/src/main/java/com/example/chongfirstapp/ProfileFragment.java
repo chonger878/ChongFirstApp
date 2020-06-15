@@ -17,6 +17,10 @@ public class ProfileFragment extends Fragment {
     private TextView getDescription;
     private Bundle bundle;
 
+    public ProfileFragment(){
+
+    }
+
     public ProfileFragment(Bundle bundle){
         this.bundle = bundle;
     }

@@ -7,8 +7,51 @@
     tools:content=".SettingsFragment">
 
     <TextView
+        android:id="@+id/name_here"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/settings_placeholder_text"/>
+        android:text="@string/chong_id_label"/>
 
+    <TextView
+        android:id="@+id/header_for_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/view_title"/>
+
+    <EditText
+        android:id="@+id/daily_matches_reminder_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/setReminderTime"/>
+
+    <EditText
+        android:id="@+id/maximum_distance_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/setDistance"/>
+
+    <EditText
+        android:id="@+id/gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/specifyGender"/>
+
+    <EditText
+        android:id="@+id/account_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/selectAccountType"/>
+
+    <EditText
+        android:id="@+id/interested_age_range"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/selectInterestedAgeRange"/>
+
+    <Button
+        android:id="@+id/updateBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/update_acct"
+        android:onClick="updateDatabase"/>
 </LinearLayout>

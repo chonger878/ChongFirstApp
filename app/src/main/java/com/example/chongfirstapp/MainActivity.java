@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText setAge;
     private EditText setOccupation;
     private EditText setDescription;
+    private EditText setEmail;
     private FragmentManager fManager;
 
 
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setAge = findViewById(R.id.ageInput);
         setOccupation= findViewById(R.id.occupationInput);
         setDescription = findViewById(R.id.descriptionInput);
+        setEmail = findViewById(R.id.emailEditText);
 
     }
 
@@ -40,17 +42,20 @@ public class MainActivity extends AppCompatActivity {
         dataBundle.putString(Constants.KEY_AGE, setAge.getText().toString());
         dataBundle.putString(Constants.KEY_OCCUPATION, setOccupation.getText().toString());
         dataBundle.putString(Constants.KEY_DESC, setDescription.getText().toString());
+        dataBundle.putString(Constants.KEY_EMAIL, setEmail.getText().toString());
 
         Bundle args = new Bundle();
         String getName = Name.getText().toString();
         String getAge = setAge.getText().toString();
         String getOccupation = setOccupation.getText().toString();
         String getDescription = setDescription.getText().toString();
+        String getEmail = setEmail.getText().toString();
 
         args.putString(Constants.KEY_NAME, getName);
         args.putString(Constants.KEY_AGE, getAge);
         args.putString(Constants.KEY_OCCUPATION, getOccupation);
         args.putString(Constants.KEY_DESC, getDescription);
+        args.putString(Constants.KEY_EMAIL, getEmail);
 
         ProfileFragment showProfile = new ProfileFragment(args);
         showProfile.setArguments(args);

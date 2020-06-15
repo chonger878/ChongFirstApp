@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">ChongFirstApp</string>
-    <string name="chong_id_label">Hello World, Chong, Erica 4/28/2020</string>
+    <string name="chong_id_label">Hello World, Chong, Erica 6/15/2020</string>
     <string name="enter_name">Name</string>
     <string name="enter_username">Username</string>
     <string name="enter_email">Email</string>
@@ -20,5 +20,12 @@
     <string name="cute_puppy">I dare you say no to this face! I can be quite playful!</string>
     <string name="nameOfMatch">Princess Mandoo</string>
     <string name="toolbarText">Toolbar</string>
+    <string name="update_acct">Update Account</string>
+    <string name="view_title">Update your settings here</string>
+    <string name="setReminderTime">Preferred reminder time</string>
+    <string name="setDistance">Prefered search distance</string>
+    <string name="specifyGender">Specify gender here</string>
+    <string name="selectAccountType">Public or Private?</string>
+    <string name="selectInterestedAgeRange">Preferred Age Range</string>
 
 </resources>
