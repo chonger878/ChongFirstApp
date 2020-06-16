@@ -5,68 +5,79 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.fragment.app.DialogFragment;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     private EditText Name;
-    private EditText setAge;
-    private EditText setOccupation;
-    private EditText setDescription;
-    private EditText setEmail;
-    private FragmentManager fManager;
+    private EditText UserName;
+    private EditText Email;
+    private EditText birthDate;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.buildprofilea3_main);
-        fManager = getSupportFragmentManager();
+        setContentView(R.layout.activity_main);
+
 
         Name = findViewById(R.id.nameEditText);
-        setAge = findViewById(R.id.ageInput);
-        setOccupation= findViewById(R.id.occupationInput);
-        setDescription = findViewById(R.id.descriptionInput);
-        setEmail = findViewById(R.id.emailEditText);
+        UserName = findViewById(R.id.usernameEditText);
+        Email = findViewById(R.id.emailEditText);
+        birthDate = findViewById(R.id.getDate);
 
     }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        if(savedInstanceState.containsKey(Constants.KEY_BIRTH_DATE)){
+            birthDate.setText((String)savedInstanceState.get(Constants.KEY_BIRTH_DATE));
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(Constants.KEY_BIRTH_DATE, birthDate.getText().toString());
+    }
+
+
+    public void showBirthDateDialog(View v){
+        DialogFragment newFragment = new DateDialog(birthDate);
+        newFragment.show(getSupportFragmentManager(), "datePicker");
+    }
+
 
     public void getSecondActivity(View view) {
         Intent intent = new Intent(MainActivity.this, SecondActivity.class);
         Bundle dataBundle = new Bundle();
         dataBundle.putString(Constants.KEY_NAME, Name.getText().toString());
-        dataBundle.putString(Constants.KEY_AGE, setAge.getText().toString());
-        dataBundle.putString(Constants.KEY_OCCUPATION, setOccupation.getText().toString());
-        dataBundle.putString(Constants.KEY_DESC, setDescription.getText().toString());
-        dataBundle.putString(Constants.KEY_EMAIL, setEmail.getText().toString());
-
-        Bundle args = new Bundle();
-        String getName = Name.getText().toString();
-        String getAge = setAge.getText().toString();
-        String getOccupation = setOccupation.getText().toString();
-        String getDescription = setDescription.getText().toString();
-        String getEmail = setEmail.getText().toString();
-
-        args.putString(Constants.KEY_NAME, getName);
-        args.putString(Constants.KEY_AGE, getAge);
-        args.putString(Constants.KEY_OCCUPATION, getOccupation);
-        args.putString(Constants.KEY_DESC, getDescription);
-        args.putString(Constants.KEY_EMAIL, getEmail);
-
-        ProfileFragment showProfile = new ProfileFragment(args);
-        showProfile.setArguments(args);
-
-        FragmentTransaction fTransaction = fManager.beginTransaction();
-        fTransaction.replace(R.id.frame_layout, showProfile).commit();
-        startActivity(intent);
-
+        dataBundle.putString(Constants.KEY_USERNAME, UserName.getText().toString());
+        dataBundle.putString(Constants.KEY_EMAIL, Email.getText().toString());
+        dataBundle.putString(Constants.KEY_BIRTH_DATE, birthDate.getText().toString());
+        intent.putExtras(dataBundle);
+        SimpleDateFormat Formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
+        Date getBirthDate = new Date();
+        Date compareDate = new Date();
+        try{
+            getBirthDate = Formatter.parse(birthDate.getText().toString());
+            compareDate = Formatter.parse(Constants.PROHIBIT_BEFORE_DATE);
+        }catch(ParseException e){
+            e.printStackTrace();
+        }
+        assert getBirthDate != null;
+        if ( getBirthDate.before(compareDate)) {
+            startActivity(intent);
+        }
     }
-
-
 }
 
 

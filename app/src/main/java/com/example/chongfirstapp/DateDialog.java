@@ -25,17 +25,19 @@ public class DateDialog extends DialogFragment implements DatePickerDialog.OnDat
         super.onCreate(savedInstanceState);
 
         final Calendar dob = Calendar.getInstance();
-        int byear = dob.get(Calendar.YEAR);
-        int bmonth = dob.get(Calendar.MONTH);
-        int bday = dob.get(Calendar.DAY_OF_MONTH);
-        return new DatePickerDialog(getActivity(),this, byear, bmonth, bday);
+        int bYear = dob.get(Calendar.YEAR);
+        int bMonth = dob.get(Calendar.MONTH);
+        int bDay = dob.get(Calendar.DAY_OF_MONTH);
+        return new DatePickerDialog(getActivity(),this, bYear, bMonth, bDay);
     }
 
 
 
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth)
     {
+       int correctMonth = month + 1;
+
         birthDate.setText((new StringBuilder().append(year).append("-").
-                append(month+1).append("-").append(dayOfMonth)));
+                append(correctMonth).append("-").append(dayOfMonth)));
     }
 }
