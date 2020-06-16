@@ -49,6 +49,7 @@ dependencies {
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:$rootProject.archLifecycleVersion"
     implementation "com.google.android.material:material:$rootProject.materialVersion"
     testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.2.0'
     androidTestImplementation "androidx.arch.core:core-testing:$rootProject.coreTestingVersion"
     androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
