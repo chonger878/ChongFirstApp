@@ -27,5 +27,9 @@
     <string name="specifyGender">Specify gender here</string>
     <string name="selectAccountType">Public or Private?</string>
     <string name="selectInterestedAgeRange">Preferred Age Range</string>
+    <string name="enable_location">Please enable location</string>
+    <string name="location_message">You must enable a location to see matches.</string>
+    <string name="location_settings">Location Settings</string>
+    <string name="location_cancel">Cancel</string>
 
 </resources>
