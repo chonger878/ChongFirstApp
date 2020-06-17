@@ -75,7 +75,7 @@ public class MatchesFragment extends Fragment {
 
     public class ContentAdapter extends RecyclerView.Adapter<ViewHolder>{
 
-        private static final int LENGTH = 6;
+        //private static final int LENGTH = 6;
         private  MatchItem[] name;
         //private String[] image;
         //private final String[] mDesc;

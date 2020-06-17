@@ -27,6 +27,7 @@ public class FirebaseMatchModel {
 
     public void addMatch(MatchItem match){
         CollectionReference matchItemRef = getMatchDb.collection("matches");
+        matchItemRef.add(match);
     }
 
     public void getMatches(final Consumer<QuerySnapshot> dataChangedCallback, final Consumer<FirebaseFirestoreException> dataErrorCallback) {
